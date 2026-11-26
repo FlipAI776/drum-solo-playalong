@@ -2,7 +2,7 @@
 
 ## Klänge der Audiodateien
 
-Die drei MP3-Dateien (walking-bass, klavier, saxofon-solo) wurden am Computer erzeugt (eigene Akkordfolge in B-Dur, 128 BPM,
+Die vier MP3-Dateien (metronom, walking-bass, klavier, saxofon-solo) wurden am Computer erzeugt (eigene Akkordfolge in B-Dur, 128 BPM,
 Bass, Klavier und Saxofon-Solo regelbasiert generiert). Für die Instrumentenklänge wurde die Sounddatei
 **Fluid R3 GM** verwendet. Die Sounddatei selbst ist nicht Teil dieses Repositories.
 

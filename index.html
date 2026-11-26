@@ -23,20 +23,9 @@
   <main id="haupt">
     <div id="meldung" class="meldung" role="alert" hidden></div>
 
-    <section class="karte" aria-labelledby="hTempo">
-      <h2 id="hTempo">Tempo</h2>
-      <p class="bpm"><output id="bpmAnzeige" for="bpmRegler">128</output> <span>BPM</span></p>
-      <p id="bpmProzent" class="klein"></p>
-      <div class="reihe tempo-reihe">
-        <button type="button" id="bpmMinus" class="rund" aria-label="Tempo um 1 BPM langsamer">&minus;</button>
-        <input type="range" id="bpmRegler" aria-label="Tempo in BPM">
-        <button type="button" id="bpmPlus" class="rund" aria-label="Tempo um 1 BPM schneller">+</button>
-      </div>
-      <div id="schnellwahl" class="reihe schnell" role="group" aria-label="Schnellwahl Tempo"></div>
-    </section>
-
     <section class="karte" aria-labelledby="hAbspielen">
       <h2 id="hAbspielen">Abspielen</h2>
+      <p class="tempo-fest">Tempo: <strong><output id="bpmAnzeige">128</output> BPM</strong> (fest)</p>
       <div class="reihe">
         <button type="button" id="playKnopf" class="gross">&#9654; Abspielen</button>
         <button type="button" id="stopKnopf">&#9632; Zum Anfang</button>

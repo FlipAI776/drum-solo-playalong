@@ -53,8 +53,6 @@ h3 { font-size: 1.05rem; margin: 0; }
 }
 
 .reihe { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
-.tempo-reihe { flex-wrap: nowrap; }
-.tempo-reihe input[type="range"] { flex: 1 1 0; }
 
 /* Knöpfe */
 button {
@@ -84,9 +82,7 @@ button:focus-visible, input:focus-visible, a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Tempo-Anzeige */
-.bpm { margin: 0; font-size: 1.1rem; }
-.bpm output { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+.tempo-fest { margin: 0 0 .75rem; font-size: 1.1rem; }
 
 /* Regler */
 input[type="range"] {
@@ -96,8 +92,6 @@ input[type="range"] {
   accent-color: var(--akzent);
   cursor: pointer;
 }
-
-.schnell button { flex: 1 1 4rem; }
 
 .haken { display: inline-flex; gap: .5rem; align-items: center; min-height: 2.75rem; cursor: pointer; }
 .haken input { width: 1.5rem; height: 1.5rem; accent-color: var(--akzent); }
