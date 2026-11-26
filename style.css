@@ -1,0 +1,133 @@
+/* style.css – Aussehen der App. Kontrastreich, große Bedienflächen, ab 320 px nutzbar. */
+
+:root {
+  --text: #14213d;
+  --grund: #f4f6fb;
+  --karte: #ffffff;
+  --rand: #9aa7c0;
+  --akzent: #0b5cad;
+  --akzent-dunkel: #08427d;
+  --akzent-text: #ffffff;
+  --warn-grund: #fff1cc;
+  --warn-rand: #8a5a00;
+  --fokus: #b45309;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 18px; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--grund);
+}
+
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--akzent); color: var(--akzent-text); padding: .5rem 1rem; z-index: 10;
+}
+.skip:focus { left: 0; }
+
+.kopf, main, .fuss { max-width: 46rem; margin: 0 auto; padding: 0 1rem; }
+.kopf { padding-top: 1rem; }
+
+.kopfzeile { display: flex; gap: 1rem; align-items: flex-start; justify-content: space-between; }
+h1 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 .5rem; overflow-wrap: break-word; hyphens: auto; }
+h2 { font-size: 1.2rem; margin: 0 0 .75rem; }
+h3 { font-size: 1.05rem; margin: 0; }
+.hinweis { margin: 0 0 1rem; }
+.klein { font-size: .9rem; margin: 0 0 .75rem; }
+
+.schrift { display: flex; gap: .4rem; flex-shrink: 0; }
+.schrift button { min-width: 2.75rem; padding: .4rem .5rem; }
+
+.karte {
+  background: var(--karte);
+  border: 2px solid var(--rand);
+  border-radius: .75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reihe { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+.tempo-reihe { flex-wrap: nowrap; }
+.tempo-reihe input[type="range"] { flex: 1 1 0; }
+
+/* Knöpfe */
+button {
+  font: inherit;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: .5rem 1rem;
+  color: var(--akzent);
+  background: var(--karte);
+  border: 2px solid var(--akzent);
+  border-radius: .5rem;
+  cursor: pointer;
+}
+button:hover { background: #e6effa; }
+button.gross, button[aria-pressed="true"], button.aktiv {
+  color: var(--akzent-text);
+  background: var(--akzent);
+}
+button.gross:hover, button[aria-pressed="true"]:hover, button.aktiv:hover { background: var(--akzent-dunkel); }
+button.gross { font-weight: 700; min-width: 9rem; }
+button.rund { font-size: 1.4rem; line-height: 1; padding: .3rem .6rem; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Sichtbarer Fokus für Tastaturbedienung */
+button:focus-visible, input:focus-visible, a:focus-visible {
+  outline: 4px solid var(--fokus);
+  outline-offset: 2px;
+}
+
+/* Tempo-Anzeige */
+.bpm { margin: 0; font-size: 1.1rem; }
+.bpm output { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+
+/* Regler */
+input[type="range"] {
+  flex: 1 1 10rem;
+  min-width: 0;
+  height: 2.75rem;
+  accent-color: var(--akzent);
+  cursor: pointer;
+}
+
+.schnell button { flex: 1 1 4rem; }
+
+.haken { display: inline-flex; gap: .5rem; align-items: center; min-height: 2.75rem; cursor: pointer; }
+.haken input { width: 1.5rem; height: 1.5rem; accent-color: var(--akzent); }
+
+.position { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin-top: .75rem; }
+.position label { font-weight: 600; }
+.position output { font-variant-numeric: tabular-nums; min-width: 7rem; }
+
+/* Mischpult */
+.mixer { display: grid; gap: .75rem; }
+.spur { border: 2px solid var(--rand); border-radius: .6rem; padding: .6rem .8rem; }
+.spur.stumm { opacity: .75; background: #eef0f5; }
+.spur-kopf { display: flex; justify-content: space-between; gap: .5rem; align-items: baseline; }
+.spur-kopf output { font-variant-numeric: tabular-nums; font-weight: 700; }
+.spur .reihe { flex-wrap: nowrap; }
+.spur button { white-space: nowrap; }
+
+.meldung {
+  background: var(--warn-grund);
+  border: 2px solid var(--warn-rand);
+  border-radius: .6rem;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.fuss { font-size: .85rem; padding-bottom: 2rem; }
+
+@media (max-width: 420px) {
+  .kopfzeile { flex-direction: column-reverse; align-items: flex-end; gap: .5rem; }
+  .kopfzeile h1 { align-self: stretch; }
+  .spur .reihe { flex-wrap: wrap; }
+  button.gross { min-width: 0; flex: 1 1 100%; }
+}
